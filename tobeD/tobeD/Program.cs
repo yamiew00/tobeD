@@ -11,7 +11,7 @@ namespace tobeD
         static void Main(string[] args)
         {
             MongoClient client = new MongoClient("mongodb+srv://question-bank-admin:mk+nfFx*wmBgR4G#@ruledata.tmqy1.mongodb.net/{0}?retryWrites=true&w=majority");
-            var database = client.GetDatabase("Question");
+            var database = client.GetDatabase("QuestionBank");
             var collection = database.GetCollection<ECH>("QuestionECH");
 
             var result = collection.Find(x => true).ToEnumerable();
