@@ -18,6 +18,7 @@ namespace ExamKeeper.Models {
                         var connectionString = Decrypt.get(UtilsMongo.url);
                         var setting = MongoClientSettings.FromConnectionString(connectionString);
                         setting.ConnectTimeout = new System.TimeSpan(1, 0, 0);
+                        setting.ServerSelectionTimeout = new System.TimeSpan(1, 0, 0);
 
                         _client = new MongoClient(setting);
                     }

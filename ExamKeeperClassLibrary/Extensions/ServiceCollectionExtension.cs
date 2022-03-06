@@ -59,7 +59,8 @@ namespace ExamKeeperClassLibrary.Extensions
                 var connectionstring = configs["QuestionBank_Mongo_ConnectionString"];
                 var clientSetting = MongoClientSettings.FromConnectionString(connectionstring);
                 clientSetting.ConnectTimeout = new System.TimeSpan(0, 5, 0);
-                
+                clientSetting.ServerSelectionTimeout = new System.TimeSpan(0, 5, 0);
+
                 MongoClient questionBankClient = new MongoClient(clientSetting);
                 var dataBase = questionBankClient.GetDatabase("QuestionBank"); //寫死
 
