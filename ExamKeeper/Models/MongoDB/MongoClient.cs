@@ -14,7 +14,12 @@ namespace ExamKeeper.Models {
             get {
                 lock(connectionLock) {
                     if (_client == null) {
-                        _client = new MongoClient(Decrypt.get(UtilsMongo.url));
+                        
+                        var connectionString = Decrypt.get(UtilsMongo.url);
+                        var setting = MongoClientSettings.FromConnectionString(connectionString);
+                        setting.ConnectTimeout = new System.TimeSpan(1, 0, 0);
+
+                        _client = new MongoClient(setting);
                     }
                 }
                 return _client;
