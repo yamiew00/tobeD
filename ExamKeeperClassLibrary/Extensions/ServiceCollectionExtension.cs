@@ -56,7 +56,7 @@ namespace ExamKeeperClassLibrary.Extensions
             }
             else
             {
-                MongoClient questionBankClient = new MongoClient(configs["QuestionBank_Mongo_ConnectionString"] + "?connect=replicaSet");
+                MongoClient questionBankClient = new MongoClient(configs["QuestionBank_Mongo_ConnectionString"] + "&maxConnectionIdleTime=30001" + "?connect=replicaSet");
                 var dataBase = questionBankClient.GetDatabase("QuestionBank"); //寫死
 
                 MongoDataStream<Question> mongoDataStream = new MongoDataStream<Question>(dataBase, definitionLibrary.EduSubjects);
