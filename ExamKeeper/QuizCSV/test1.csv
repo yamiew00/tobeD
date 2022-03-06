@@ -1,0 +1,2 @@
+Timestamp,Machine,Pid,Increment,CreationTime,QuizUID,QuizCode,UserUID,QuizName,StartTime,EndTime,Duration,IsAutoCheck,Education,Subject,Grade,CreateTime,0,0,0,0,01/01/1970 00:00:00,,0,00000000-0000-0000-0000-000000000000,,,,3,False,,,,01/01/0001 00:00:00
+0,0,0,0,01/01/1970 00:00:00,,0,00000000-0000-0000-0000-000000000000,,,,8,True,,,,01/01/0001 00:00:00

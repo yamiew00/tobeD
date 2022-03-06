@@ -1,0 +1,8 @@
+published/
+bin/Release/
+bin/
+obj/
+packages/
+appsettings.Production.json
+appsettings.Acceptance.json
+appsettings.Development.json

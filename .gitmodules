@@ -1,0 +1,3 @@
+[submodule "ExamKeeper/utils"]
+	path = ExamKeeper/utils
+	url = git@ssh.dev.azure.com:v3/oneclass-rd/ExamKeeper/Utils_BackEnd
