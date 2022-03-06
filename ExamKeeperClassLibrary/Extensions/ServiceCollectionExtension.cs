@@ -56,7 +56,11 @@ namespace ExamKeeperClassLibrary.Extensions
             }
             else
             {
-                MongoClient questionBankClient = new MongoClient(configs["QuestionBank_Mongo_ConnectionString"] + "connectTimeoutMS=60000;" + "socketTimeoutMS=120000;" + "?connect=replicaSet");
+                var connectionstring = configs["QuestionBank_Mongo_ConnectionString"];
+                var clientSetting = MongoClientSettings.FromConnectionString(connectionstring);
+                clientSetting.ConnectTimeout = new System.TimeSpan(0, 5, 0);
+                
+                MongoClient questionBankClient = new MongoClient(clientSetting);
                 var dataBase = questionBankClient.GetDatabase("QuestionBank"); //寫死
 
                 MongoDataStream<Question> mongoDataStream = new MongoDataStream<Question>(dataBase, definitionLibrary.EduSubjects);
